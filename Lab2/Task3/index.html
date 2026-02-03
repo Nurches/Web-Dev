@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .global {
+        display: grid;
+        grid-template-areas:
+          "nav"
+          "main-text"
+          "cards";
+      }
+      .left-bar {
+        display: flex;
+        align-items: baseline;
+      }
+      ul {
+        margin: 0;
+        display: flex;
+        gap: 10px;
+        list-style: none;
+      }
+      li {
+        padding: 8px;
+        font-size: 16px;
+        font-weight: 400;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+      }
+      .nav {
+        padding: 16px 32px;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .github {
+        margin-right: 16px;
+      }
+      .right-bar {
+        display: flex;
+        align-items: center;
+      }
+      .search {
+        padding-left: 8px;
+        border: 0.8px solid rgba(209, 217, 224, 0.7);
+        height: 32px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 320px;
+        border-radius: 8px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .search-text {
+        display: flex;
+        align-items: center;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        color: rgb(89, 99, 110);
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .lupa {
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
+      .slash {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        border: 0.8px solid rgba(209, 217, 224, 0.7);
+        margin-right: 8px;
+      }
+      .s {
+        font-size: 20px;
+        color: grey;
+        text-align: center;
+      }
+      .line {
+        background-color: rgb(209, 217, 224);
+        width: 1px;
+        height: 20px;
+        margin: 0 8px;
+      }
+      .dash {
+        padding: 6px 12px;
+        border-color: rgb(209, 217, 224);
+        background-color: rgba(0, 0, 0, 0);
+        width: auto;
+        height: auto;
+        border-radius: 6px;
+        border-width: 0.8px;
+      }
+      .main-text {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0px 120px 80px;
+        padding: 80px 16px 0;
+      }
+      .h {
+        text-align: center;
+        font-family:
+          "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 35px;
+        font-weight: 800;
+        line-height: 68px;
+        letter-spacing: -5px;
+      }
+      .b {
+        margin: 40px 0 0;
+        padding: 0 96px;
+        width: auto;
+        font-size: 18px;
+        font-family:
+          "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-weight: 400;
+        text-align: center;
+        line-height: 24px;
+        color: rgb(89, 99, 110);
+      }
+      .trial {
+        margin: 24px 0 0;
+        padding: 16px 24px;
+        border-radius: 6px;
+        background-color: rgb(27, 31, 35);
+        border-color: white;
+        font-weight: 500;
+        line-height: 16px;
+        text-align: center;
+        font-size: 16px;
+        font-family:
+          "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: white;
+        background-image:
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0) 100%
+          ),
+          var(--color-mktg-btn-bg) !important;
+      }
+
+      .cards {
+        margin: 0px 120px;
+        padding: 0px 16px;
+        display: flex;
+        justify-content: center;
+      }
+      .cards-inside {
+        display: flex;
+        justify-content: center;
+        margin: 0px -8px;
+        padding: 0px;
+      }
+      .card-out {
+        margin: 0px;
+        padding: 0px 8px;
+        width: 421px;
+      }
+      .card1{
+        padding: 32px 8px;
+        margin: 0;
+        height: auto;
+      }
+      .card2{
+        padding: 32px 8px;
+        margin: 0;
+        height: auto;
+      }
+      .card3{
+        padding: 32px 8px 8px;
+        margin: 0;
+        height: auto;
+        background-image: radial-gradient(circle, #2188ff 0%, #2188ff 48%, #0d74ec 85%, #0d74ec 98%) !important;
+        border-radius: 12px;
+      }
+      .card1-inside{
+        border-radius: 12px;
+        box-shadow: 1px 6px 20px rgba(209, 217, 224, 0.8);
+        color: rgb(31, 35, 40);
+        display: flex;
+        flex-direction: column;
+        font-family: "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        justify-content: space-between;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        height: auto;
+        border-width: 2px;
+    }
+    .card2-inside{
+        border-radius: 12px;
+        box-shadow: 1px 6px 20px rgba(209, 217, 224, 0.8);
+        color: rgb(31, 35, 40);
+        display: flex;
+        flex-direction: column;
+        font-family: "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        justify-content: space-between;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        height: auto;
+        border-width: 2px;
+    }
+    .card3-inside{
+        border-radius: 12px;
+        box-shadow: 1px 6px 20px rgba(209, 217, 224, 0.8);
+        color: rgb(31, 35, 40);
+        display: flex;
+        flex-direction: column;
+        font-family: "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        justify-content: space-between;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        height: auto;
+        border-width: 2px;
+        background: white;
+    }
+    .header{
+        padding: 24px 16px;
+        margin: 0px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .free{
+        margin: 0px 0px 8px;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.24px;
+        text-align: center;
+    }
+    .tex{
+      margin: 0px 0px 8px;
+      padding: 0px 0px 24px;
+      font-family: "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17.5px;
+      color: rgb(89, 99,110);
+    }
+    .cost{
+      font-family: "Mona Sans",
+          "Mona Sans Header Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: center;
+    }
+    .mb-0{
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+      text-align: center;
+    }
+    .inner-cost{
+      display: flex;
+      flex-wrap: wrap;
+      font-weight: 600;
+      justify-content: center;
+      text-align: center;
+    }
+    .first-cost{
+      margin: 0px 8px 0px 0px;
+      display: flex;
+      align-items: center;
+      font-size: 48px;
+      font-weight: 400;
+      letter-spacing: -0.48px;
+      line-height: 64px;
+      text-align: center;
+      color: rgb(31, 35, 40);
+    }
+    .dollar{
+      font-size: 20px;
+      letter-spacing: -0.48px;
+      margin: 0px 4px 0px 0px;
+      position: relative;
+      text-align: center;
+      top: -10px;
+      color: rgb(89, 99, 110);
+    }
+    .usd{
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      margin: 0px 0px 8px 4px;
+      align-self: flex-end;
+    }
+    .per-month{
+      color: rgb(89, 99, 110);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+      display: block;
+      align-content: center;
+    }
+    
+    .send-create{
+      background-color: rgba(0, 0, 0, 0);
+      padding: 16px 24px;
+      background-size: auto;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      border-color: rgb(31, 35, 40);
+      
+    }
+    </style>
+  </head>
+  <body>
+    <div class="global">
+      <div class="nav">
+        <div class="left-bar">
+          <img class="github" src="./assets/github.png" alt="git" height="30" />
+          <ul>
+            <li>Platform</li>
+            <li>Solutions</li>
+            <li>Resources</li>
+            <li>Open Source</li>
+            <li>Enterprise</li>
+            <li>Pricing</li>
+          </ul>
+        </div>
+        <div class="right-bar">
+          <div class="search">
+            <div class="search-text">
+              <img class="lupa" src="./assets/search.png" alt="s" width="25" />
+              <p>Search or jump to...</p>
+            </div>
+            <div class="slash">
+              <p class="s">/</p>
+            </div>
+          </div>
+          <div class="line"></div>
+          <button class="dash">Dashboard</button>
+        </div>
+      </div>
+      <div class="main-text">
+        <div class="h">
+          <h1 class="h1text">Try the Copilot-powered platform</h1>
+        </div>
+        <div class="b">
+          <div class="p">
+            We get it, there's a lot you can do with GitHub. That’s why we've
+            packed all of it into a single risk-free trial that includes GitHub
+            Enterprise, Copilot, and Advanced Security.
+          </div>
+          <button class="trial">Start free for 30 days</button>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="cards-inside">
+          <div class="card-out col1">
+            <div class="card card1">
+              <div class="card1-inside">
+                <div class="header">
+                    <h2 class="free">Free</h2>
+                    <p class="tex">The basics for individuals <br>
+and organizations</p>
+                      <div class="cost">
+                        <h3 class="mb-0">
+                          <span class="inner-cost">
+                            <span class="first-cost">
+                              <sup class="dollar">$</sup>
+                              <span class="buy">0</span>
+                              <span class="usd">USD</span>
+                            </span>
+                            <span class="per-month">per-user/month</span>
+                          </span>
+                        </h3>
+                      </div>
+                      <div class="create">
+                        <a href="#" class="send-create">Create a free organization</a>
+                      </div>
+                </div>
+                <div class="about"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-out col2">
+            <div class="card card2">
+              <div class="card2-inside">
+                <div class="header">
+                  <h2 class="free">Team</h2>
+                </div>
+                <div class="about"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-out col3">
+            <div class="card card3">
+              <div class="card3-inside">
+                <div class="header">
+                  <h2 class="free">Enterprise</h2>
+                </div>
+                <div class="about"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
