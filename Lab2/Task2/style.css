@@ -1,4 +1,4 @@
-/* ===== BASE ===== */
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -12,7 +12,7 @@
         background: #fff;
       }
 
-      /* ===== GRID LAYOUT ===== */
+      
       .global-page {
         display: grid;
         grid-template-columns: 1.3fr 2px 1fr;
@@ -22,7 +22,7 @@
         min-height: 100vh;
       }
 
-      /* ===== LEFT SIDE ===== */
+      
       .left-side {
         grid-area: left-side;
         display: flex;
@@ -64,13 +64,13 @@
         height: auto;
       }
 
-      /* ===== VERTICAL LINE ===== */
+
       .line {
         grid-area: line;
         background-color: rgb(221, 226, 232);
       }
 
-      /* ===== RIGHT SIDE ===== */
+
       .right-side {
         grid-area: right-side;
         display: flex;
@@ -90,7 +90,7 @@
         text-align: left;
       }
 
-      /* ===== FORM ===== */
+
       .forms input {
         width: 100%;
         height: 60px;
@@ -171,7 +171,7 @@
         font-weight: 600;
       }
 
-      /* ===== FOOTER ===== */
+
       .footer {
         grid-area: footer;
         height: 60px;
@@ -181,7 +181,7 @@
         text-align: center;
       }
 
-      /* ===== MOBILE ===== */
+
       @media (max-width: 768px) {
         .global-page {
           grid-template-columns: 1fr;
