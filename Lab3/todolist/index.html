@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            font-family: 'Arial';
+        }
+        .global{
+            padding: 0px 300px;
+        }
+        li{
+            list-style: none;
+            display: flex;
+            border: 1px grey solid;
+            padding: 10px;
+            border-radius: 8px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        header{
+            background-color: black;
+            color: grey;
+            padding: 15px ;
+        }
+
+        .main{
+            padding: 50px 100px;
+        }
+
+        .input-field{
+            padding-left: 50px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #new-task{
+            padding: 10px;
+            padding-right: 300px;
+            border-radius: 8px;
+            margin-right: 50px;
+        }
+        
+        #add{
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 8px;
+            background-color: skyblue;
+        }
+
+        .check{
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="global">
+        <header>ToDo List</header>
+        <div class="main">
+            <h1 class="h">ToDo List</h1>
+            <div class="input-field">
+                <input type="text" id="new-task" placeholder="New">
+                <button id="add" onclick="">Add</button>
+            </div>
+            <ul id="task-list">
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById("new-task");
+        const button = document.getElementById("add");
+        const taskList = document.getElementById("task-list");
+
+        button.addEventListener('click', addTask);
+
+        function addTask() {
+            const taskText = input.value.trim();
+
+            if(taskText === '') return;
+
+            const li = document.createElement('li');
+
+            li.classList.add('task-item');
+
+            li.innerHTML = `
+                <div>
+                <input type="checkbox" class="check">
+                <span>${taskText}</span>
+                </div>
+                <button class="delete">🗑</button>
+            `;
+
+            taskList.appendChild(li);
+            input.value = "";
+
+            li.querySelector(".delete").addEventListener("click", () => {li.remove()});
+
+            li.querySelector(".check").addEventListener('change', function(){
+                if(this.checked){
+                    li.querySelector('span').style.textDecoration = 'line-through';
+                }
+                else{
+                    li.querySelector('span').style.textDecoration = 'none';
+                }
+            })
+
+        }
+    </script>
+</body>
+</html>
