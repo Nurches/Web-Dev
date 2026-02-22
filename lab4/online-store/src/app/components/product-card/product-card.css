@@ -10,6 +10,17 @@
     justify-content: space-between;
 }
 
+.about{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.send-icon{
+    width: 50px !important;
+    height: 50px !important;
+}
+
 .card img{
     width: 100%;
     border-radius: 8px;

@@ -13,6 +13,8 @@ export class ProductCardComponent {
   @Input() product!: Product;
   isModalOpen = false;
 
+  currentLink = "";
+
   currentImageIndex = 0;
 
   openModal(index: number){
@@ -35,4 +37,9 @@ export class ProductCardComponent {
       this.currentImageIndex--;
     }
   }
+
+  makeLink(){
+    this.currentLink = "https://wa.me/?text=Check out this product: "+this.product.link;
+  }
+
 }

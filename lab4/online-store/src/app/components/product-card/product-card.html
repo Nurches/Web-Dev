@@ -6,14 +6,27 @@
 
     <p>{{ product.description }}</p>
 
-    <div class="price">
-        {{ product.price | number }} ₸
+    <div class="about">
+        <div class="about-inside">
+            <div class="price">
+                {{ product.price | number }} ₸
+            </div>
+
+            <div class="rating">
+                ⭐{{ product.rating}}
+            </div>
+        </div>
+
+        <div class="send">
+            <a [href]="currentLink" target="_blank">
+                <img (click)="makeLink()" class="send-icon" src="data:image/png;base64,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" alt="l">
+            </a>
+            
+        </div>
+    </div>
     </div>
 
-    <div class="rating">
-        ⭐{{ product.rating}}
-    </div>
-    </div>
+    
     
     <div class="">
         <button class="btn"><a [href]="product.link" target="_blank">View on Kaspi</a></button>
