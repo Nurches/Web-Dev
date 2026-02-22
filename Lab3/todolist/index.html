@@ -103,7 +103,8 @@
             taskList.appendChild(li);
             input.value = "";
 
-            li.querySelector(".delete").addEventListener("click", () => {li.remove()});
+            li.querySelector(".delete").addEventListener("click", ()=>{li.remove()});
+
 
             li.querySelector(".check").addEventListener('change', function(){
                 if(this.checked){

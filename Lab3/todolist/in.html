@@ -6,18 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <select name="col" id="changeColor">
-        <option value="green">Green</option>
-        <option value="red">Red</option>
-        <option value="yellow">Yellow</option>
-    </select>
+    <ul id="list-item">
+
+    </ul>
 
     <script>
-        let select = document.getElementById("changeColor");
+        items = ["apple", "banana", "orange", "skacj"];
 
-        select.addEventListener("change", function(){
-            document.body.style.backgroundColor = this.value;
-        })
+        items.forEach(element => {
+            const li = document.createElement("li");
+            li.textContent = element;
+            const lis = document.getElementById("list-item");
+            lis.appendChild(li);
+        });
+
+
     </script>
 </body>
 </html>
