@@ -1,0 +1,53 @@
+<div class="card">
+  <div>
+    <img
+      [src]="product.image"
+      alt="{{ product.name }}"
+      (click)="openModal(0)"
+      style="cursor: pointer"
+    />
+
+    <h3>{{ product.name }}</h3>
+
+    <p>{{ product.description }}</p>
+
+    <div class="about">
+      <div class="about-inside">
+        <div class="price">{{ product.price | number }} ₸</div>
+        <div class="rating">⭐{{ product.rating }}</div>
+        <div class="likes">❤ {{ product.likes }}</div>
+      </div>
+
+      <div class="actions">
+        <button class="action-btn like" (click)="like()">Like</button>
+        <button class="action-btn delete" (click)="deleteProduct()">Delete</button>
+      </div>
+    </div>
+
+    <div class="share">
+      <a class="share-btn" [href]="whatsappShareLink" target="_blank">WhatsApp</a>
+      <a class="share-btn" [href]="telegramShareLink" target="_blank">Telegram</a>
+    </div>
+  </div>
+
+  <div>
+    <button class="btn">
+      <a [href]="product.link" target="_blank">View on Kaspi</a>
+    </button>
+  </div>
+</div>
+
+@if (isModalOpen) {
+  <div class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn" (click)="closeModal()">X</button>
+
+      <img [src]="product.images[currentImageIndex]" class="modal-image" />
+
+      <div class="navigation">
+        <button (click)="prevImage()">❮</button>
+        <button (click)="nextImage()">❯</button>
+      </div>
+    </div>
+  </div>
+}

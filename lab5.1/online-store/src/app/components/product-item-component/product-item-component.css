@@ -1,0 +1,163 @@
+.card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: white;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  margin: 12px 0 8px;
+  font-size: 18px;
+}
+
+p {
+  margin: 0 0 12px;
+  color: #333;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.price {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.rating {
+  margin: 10px 0;
+}
+
+.likes {
+  margin: 10px 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid steelblue;
+  background: steelblue;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+}
+
+.action-btn.like {
+  border-color: #ff4d6d;
+  background: #ff4d6d;
+  color: white;
+}
+
+.action-btn.delete {
+  border-color: red;
+  background: red;
+  color: white;
+}
+
+.share {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.share-btn {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid seagreen;
+  background: seagreen;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.modal-image {
+  width: 50%;
+  height: 50%;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}

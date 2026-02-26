@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+.global {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.global-inside {
+  display: flex;
+  flex-direction: column;
+}
+
+.cat {
+  padding: 10px;
+  border-radius: 8px;
+
+  border: 1px solid red;
+  color: white;
+  background: red;
+
+  margin: 5px 0;
+
+  font-size: 20px;
+}
+
+app-product-list-component {
+  z-index: 1000;
+}

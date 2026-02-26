@@ -1,0 +1,38 @@
+.global-product {
+  width: 100%;
+  background: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backGo {
+  width: 10% !important;
+  height: 30px !important;
+  border-radius: 8px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: red;
+  color: white;
+}
+
+.imgKaspi {
+  width: 140px !important;
+  height: auto !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  justify-items: center;
+}
