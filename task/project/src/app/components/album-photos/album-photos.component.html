@@ -1,0 +1,25 @@
+<section class="photos-section">
+  <div class="head">
+    <h1>Album #{{ albumId }} Photos</h1>
+    <button type="button" (click)="goBack()">Back</button>
+  </div>
+
+  @if (loading) {
+    <p>Loading photos...</p>
+  } @else {
+    @if (error) {
+      <p class="error">{{ error }}</p>
+    } @else if (photos.length === 0) {
+      <p>No photos available for this album.</p>
+    } @else {
+      <div class="grid">
+        @for (photo of photos; track photo.id) {
+          <article class="card" [title]="photo.title">
+            <img [src]="photo.thumbnailUrl" [alt]="photo.title" />
+            <p>{{ photo.title }}</p>
+          </article>
+        }
+      </div>
+    }
+  }
+</section>

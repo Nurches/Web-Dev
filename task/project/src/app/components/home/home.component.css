@@ -1,0 +1,29 @@
+.hero {
+  background: #ffffffcc;
+  border: 1px solid #d8ddd8;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+h1 {
+  margin: 0 0 10px;
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+  max-width: 70ch;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #2b5c45;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.button:hover {
+  background: #244d3a;
+}

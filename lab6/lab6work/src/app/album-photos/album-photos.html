@@ -1,0 +1,26 @@
+<h2>Photos</h2>
+
+@if(loading){
+  <p class="state">Loading photos...</p>
+}
+
+@if(!loading && error){
+  <p class="state error">{{ error }}</p>
+}
+
+@if(!loading && !error && photos.length === 0){
+  <p class="state">No photos found for this album.</p>
+}
+
+@if(!loading && !error && photos.length > 0){
+  <div class="grid">
+    @for(photo of photos; track photo.id){
+      <div class="photo-card">
+        <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+        <p>{{ photo.title }}</p>
+      </div>
+    }
+  </div>
+}
+
+<button [routerLink]="['/albums', albumId]">Back</button>

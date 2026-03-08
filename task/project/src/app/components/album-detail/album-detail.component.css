@@ -1,0 +1,53 @@
+.detail {
+  background: #ffffffcc;
+  border: 1px solid #d8ddd8;
+  border-radius: 14px;
+  padding: 22px;
+  max-width: 700px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 14px 0 6px;
+}
+
+input {
+  width: 100%;
+  max-width: 500px;
+  padding: 9px 10px;
+  border: 1px solid #b8c2bb;
+  border-radius: 8px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+button,
+a {
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #2b5c45;
+  background: #2b5c45;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #fff;
+  color: #1d2c24;
+  border-color: #8fa398;
+}
+
+.error {
+  margin-top: 12px;
+  color: #9b2020;
+}

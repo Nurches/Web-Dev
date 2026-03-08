@@ -1,0 +1,37 @@
+.detail-card {
+  max-width: 520px;
+  display: grid;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.actions a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}
+
+.state {
+  padding: 8px 0;
+}
+
+.error {
+  color: #b3261e;
+}
+
+.success {
+  color: #2e7d32;
+}

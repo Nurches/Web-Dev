@@ -1,0 +1,26 @@
+<h2>Albums</h2>
+
+@if(loading){
+  <p class="state">Loading albums...</p>
+}
+
+@if(!loading && error){
+  <p class="state error">{{ error }}</p>
+}
+
+@if(!loading && !error && albums.length === 0){
+  <p class="state">No albums available.</p>
+}
+
+@if(!loading && !error && albums.length > 0){
+  <ul class="albums-list">
+    @for(album of albums; track album.id){
+      <li class="album-item">
+        <a [routerLink]="['/albums', album.id]">{{ album.id }} - {{ album.title }}</a>
+        <button (click)="deleteAlbum(album.id)" [disabled]="deletingIds.has(album.id)">
+          {{ deletingIds.has(album.id) ? 'Deleting...' : 'Delete' }}
+        </button>
+      </li>
+    }
+  </ul>
+}

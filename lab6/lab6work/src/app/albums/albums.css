@@ -1,0 +1,38 @@
+.albums-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.album-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.album-item a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+.album-item a:hover {
+  text-decoration: underline;
+}
+
+.album-item button {
+  padding: 6px 10px;
+}
+
+.state {
+  padding: 10px 0;
+}
+
+.error {
+  color: #b3261e;
+}

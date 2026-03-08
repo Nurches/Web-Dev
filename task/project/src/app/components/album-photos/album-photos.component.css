@@ -1,0 +1,57 @@
+.photos-section {
+  background: #ffffffcc;
+  border: 1px solid #d8ddd8;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #8fa398;
+  background: #fff;
+  color: #1d2c24;
+  cursor: pointer;
+}
+
+.error {
+  color: #9b2020;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border: 1px solid #d8ddd8;
+  border-radius: 10px;
+  padding: 8px;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.card p {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  word-break: break-word;
+}

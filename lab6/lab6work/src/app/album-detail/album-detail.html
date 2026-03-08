@@ -1,0 +1,29 @@
+@if(loading){
+  <p class="state">Loading album...</p>
+}
+
+@if(!loading && error){
+  <p class="state error">{{ error }}</p>
+}
+
+@if(!loading && !error && album){
+  <div class="detail-card">
+    <h2>Album {{ album.id }}</h2>
+    <p>User ID: {{ album.userId }}</p>
+
+    <label for="album-title">Title</label>
+    <input id="album-title" [(ngModel)]="album.title">
+
+    <div class="actions">
+      <button (click)="save()" [disabled]="saving">
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+      <a [routerLink]="['/albums', album.id, 'photos']">View Photos</a>
+      <button routerLink="/albums">Back</button>
+    </div>
+
+    @if(saveMessage){
+      <p class="state success">{{ saveMessage }}</p>
+    }
+  </div>
+}
