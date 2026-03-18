@@ -1,0 +1,13 @@
+.greater{
+    border: 1px solid grey;
+    border-radius: 6px;
+    padding: 10px;
+    background: rebeccapurple;
+    color: white;
+}
+
+.usual{
+    border: 1px solid grey;
+    border-radius: 6px;
+    padding: 10px;
+}
