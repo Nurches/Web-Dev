@@ -1,29 +1,22 @@
-from django.http import JsonResponse
-from .models import Product, Category
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
-PRODUCTS_FIELDS = ("id", "name", "price", "description", "count", "is_active", "category_id")
-CATEGORY_FIELDS = ("id", "name")
+from .models import Category, Product
+from .serializers import CategorySerializer, ProductSerializer
 
-def products_list(request):
-    return JsonResponse(list(Product.objects.values(*PRODUCTS_FIELDS)), safe=False)
 
-def product_detail(request, id):
-    product = Product.objects.filter(id=id).values(*PRODUCTS_FIELDS).first()
-    if product is None:
-        return JsonResponse({"error": "Product not found"}, status=404)
-    return JsonResponse(product)
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
-def categories_list(request):
-    return JsonResponse(list(Category.objects.values(*CATEGORY_FIELDS)), safe=False)
+    @action(detail=True, methods=['get'], url_path='products')
+    def products(self, request, pk=None):
+        category = self.get_object()
+        serializer = ProductSerializer(category.products.all(), many=True)
+        return Response(serializer.data)
 
-def category_detail(request, id):
-    category = Category.objects.filter(id=id).values(*CATEGORY_FIELDS).first()
-    if category is None:
-        return JsonResponse({"error": "Category not found"}, status=404)
-    return JsonResponse(category)
 
-def category_products(request, id):
-    if not Category.objects.filter(id=id).exists():
-        return JsonResponse({"error": "Category not found"}, status=404)
-    products = list(Product.objects.filter(category_id=id).values(*PRODUCTS_FIELDS))
-    return JsonResponse(products, safe=False)
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
